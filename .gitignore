@@ -1,2 +1,4 @@
-venv
 database.db
+Vagrantfile
+.vagrant/
+__pycache__/
