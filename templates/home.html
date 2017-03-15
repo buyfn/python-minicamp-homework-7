@@ -16,8 +16,6 @@
 		  <input name="author" />
 		  Post:
 		  <input name="body" />
-		  Id:
-		  <input name="id" />
 		  <input type="submit" value="Submit" />
 		</form>
 
@@ -32,11 +30,14 @@
 		<script id="post-template" type="text/post-template">
 		  <li>
 		    <h3 class="title"></h3>
-		    <p class="text"></p>
-		    <p class="author"></p>
-		    <p>Post id: <span class="post-id"></span></p>
-		    <p>Likes: <span class="likes"></span></p>
-		    <button class="like-button">Like</button>
+		    <div class="post-body hidden">
+		      <p class="text"></p>
+		      <p class="author"></p>
+		      <p>Post id: <span class="post-id"></span></p>
+		      <p>Likes: <span class="likes"></span></p>
+		      <button class="like-button">Like</button>
+		      <button class="delete-button">Delete</button>
+		    </div>
 		  </li>
 		</script>
 		

@@ -15,11 +15,9 @@ def newPost():
     author = request.form['author']
     title = request.form['title']
     body = request.form['body']
-    likes = 0
-    id = request.form['id']
 
     try:
-        cursor.execute('INSERT INTO posts(author, title, body, likes, id) VALUES (?, ?, ?, ?, ?)', (author, title, body, likes, id))
+        cursor.execute('INSERT INTO posts(author, title, body) VALUES (?, ?, ?)', (author, title, body))
         connection.commit()
         message = 'successfully added'
     except Exception as err:
@@ -44,10 +42,20 @@ def likePost(post_id):
     connection = sqlite3.connect('database.db')
     cursor = connection.cursor()
 
-    cursor.execute('UPDATE posts SET likes=likes + 1 WHERE id=?', (post_id))
+    cursor.execute('UPDATE posts SET likes=likes + 1 WHERE id=?', (post_id, ))
     connection.commit()
     connection.close()
     return post_id + ' successfully updated'
+
+@app.route('/delete/<post_id>')
+def deletePost(post_id):
+    connection = sqlite3.connect('database.db')
+    cursor = connection.cursor()
+
+    cursor.execute('DELETE FROM posts where id=?', (post_id, ))
+    connection.commit()
+    connection.close()
+    return post_id + ' successfully deleted'
 
 app.run(debug = True,
         host = '0.0.0.0')
