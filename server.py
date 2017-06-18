@@ -35,7 +35,7 @@ def getPosts():
     cursor.execute('SELECT * FROM posts')
     postsList = cursor.fetchall()
     connection.close()
-    return jsonify(postsList)
+    return jsonify(result=postsList)
 
 @app.route('/like/<post_id>')
 def likePost(post_id):

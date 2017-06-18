@@ -3,7 +3,7 @@ $(function() {
 	url: '/posts'
     }).done(function(response) {
 	var template = $('#post-template').html();
-	response.forEach(function(post) {
+	response['result'].forEach(function(post) {
 	    var newPost = $(template).clone();
 	    $(newPost).find('.title').html(post[1]);
 	    $(newPost).find('.text').html(post[2]);
