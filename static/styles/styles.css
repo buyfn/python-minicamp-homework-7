@@ -2,6 +2,47 @@ body {
   background: whitesmoke;
 }
 
+p {
+    margin: 0;
+    padding: 0;
+}
+
 .hidden {
     display: none;
+}
+
+form {
+    background-color: rgba(232, 209, 122, 0.5);
+    width: 400px;
+    padding: 1px 30px 30px 30px;
+}
+
+form label {
+    display: inline-block;
+    width: 100px;
+}
+
+.field {
+    margin-bottom: 1rem;
+}
+
+input, textarea {
+    font-size: 1.15rem;
+    width: 400px;
+}
+
+.title {
+    border-bottom: 1px dashed black;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.title:hover {
+    color: red;
+    border-color: red;
+}
+
+.text {
+    font-size: 1.25rem;
+    margin-bottom: 1em;
 }

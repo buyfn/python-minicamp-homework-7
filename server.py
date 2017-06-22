@@ -19,7 +19,7 @@ def newPost():
     try:
         cursor.execute('INSERT INTO posts(author, title, body) VALUES (?, ?, ?)', (author, title, body))
         connection.commit()
-        message = 'successfully added'
+        message = 'successfully added<br><a href="/">back to home</a>'
     except Exception as err:
         print(err)
         connection.rollback()
